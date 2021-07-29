@@ -1,0 +1,3 @@
+﻿  test .c
+E:\C程序\test 7.28\test .c(88,1): warning C4047: “初始化”:“int”与“char [9]”的间接级别不同
+  test 7.28.vcxproj -> E:\C程序\test 7.28\Debug\test 7.28.exe
