@@ -1,0 +1,25 @@
+﻿生成启动时间为 2021/8/21 12:58:07。
+     1>项目“E:\C程序\test8.21\test8.21\test8.21.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\应用\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Contact.c "test .c"
+         test .c
+     1>e:\c程序\test8.21\test8.21\test .c(34): error C2085: “Print”: 不在形参表中
+     1>e:\c程序\test8.21\test8.21\test .c(34): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>e:\c程序\test8.21\test8.21\test .c(50): warning C4013: “Print”未定义；假设外部返回 int
+         Contact.c
+     1>e:\c程序\test8.21\test8.21\contact.c(4): error C2085: “FindbyName”: 不在形参表中
+     1>e:\c程序\test8.21\test8.21\contact.c(4): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>e:\c程序\test8.21\test8.21\contact.c(8): error C2065: “name”: 未声明的标识符
+     1>e:\c程序\test8.21\test8.21\contact.c(8): warning C4047: “函数”:“const char *”与“int”的间接级别不同
+     1>e:\c程序\test8.21\test8.21\contact.c(8): warning C4024: “strcmp”: 形参和实参 2 的类型不同
+     1>e:\c程序\test8.21\test8.21\contact.c(11): warning C4098: “SearchContact”:“void”函数返回值
+     1>e:\c程序\test8.21\test8.21\contact.c(20): warning C4098: “SearchContact”:“void”函数返回值
+     1>e:\c程序\test8.21\test8.21\contact.c(27): warning C4013: “FindbyName”未定义；假设外部返回 int
+     1>e:\c程序\test8.21\test8.21\contact.c(150): error C2084: 函数“void SearchContact(PICon *)”已有主体
+                 e:\c程序\test8.21\test8.21\contact .h(43) : 参见“SearchContact”的前一个定义
+         正在生成代码...
+     1>已完成生成项目“E:\C程序\test8.21\test8.21\test8.21.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.90
