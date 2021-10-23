@@ -3,59 +3,84 @@
 #include<Windows.h>
 
 
-
-//#define ADD(x,y)  x *y + y
+#include <stdio.h>
+#include <string.h>
+void reverse_string(char *arr, int x)
+{
+	printf("%d", strlen(arr));
+	/*char *start = arr;
+	char *end = arr + x - 1;
+	while (start<end)
+	{
+		char tamp;
+		tamp = *start;
+		*start = *end;
+		*end = tamp;
+		start++;
+		end--;
+	}*/
+}
 int main()
 {
-
-
-
-	/*int a = 10;
-	int b = 10;
-	int c = 10;
-	printf("stack addr : %p\n", &a);
-	printf("stack addr : %p\n", &b);
-	printf("stack addr : %p\n", &c);*/
-	//printf("%d\n", ADD(3, 5));
+	char arr[1000];
+	scanf("%s", arr);
+	reverse_string(arr,strlen(arr));
+	printf("%s\n", arr);
 	system("pause");
 	return 0;
 }
-//int* p = NULL;
-//
-//void fun(void)
-//{
-//  static  int a = 1;
-//	//p = &a;
-//}
+//#define ADD(x,y)  x *y + y
 //int main()
 //{
-//	printf("%d", a);
 //
 //
 //
-//
-//
-//	//fun();
-//	//printf("a : %d\n", *p);
-//
-//
-//
-//
-//	//int i = 0;
-//	/*while (i < 10)
-//	{
-//		fun();
-//		i++;
-//	}*/
-//	/*printf("a == :%d", *p);
-//	printf("\n");*/
+//	/*int a = 10;
+//	int b = 10;
+//	int c = 10;
+//	printf("stack addr : %p\n", &a);
+//	printf("stack addr : %p\n", &b);
+//	printf("stack addr : %p\n", &c);*/
+//	//printf("%d\n", ADD(3, 5));
 //	system("pause");
 //	return 0;
 //}
-
-
-
-
+////int* p = NULL;
+////
+////void fun(void)
+////{
+////  static  int a = 1;
+////	//p = &a;
+////}
+////int main()
+////{
+////	printf("%d", a);
+////
+////
+////
+////
+////
+////	//fun();
+////	//printf("a : %d\n", *p);
+////
+////
+////
+////
+////	//int i = 0;
+////	/*while (i < 10)
+////	{
+////		fun();
+////		i++;
+////	}*/
+////	/*printf("a == :%d", *p);
+////	printf("\n");*/
+////	system("pause");
+////	return 0;
+////}
+//
+//
+//
+//
 
 
 
