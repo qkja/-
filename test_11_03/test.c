@@ -42,6 +42,7 @@ int My_strlen1(char* arr)
 }
 
 //递归
+
 int My_strlen2(char* arr)
 {
 	if (*arr == '\0')
@@ -51,6 +52,14 @@ int My_strlen2(char* arr)
 		
 	return 1 + My_strlen2(++arr);
 }
+
+//int main()
+//{
+//	char arr[] = "abcd";
+//
+//	printf("%d\n", My_strlen2(arr));
+//	return 0;
+//}
 
 int DigitSum(int x)
 {
@@ -70,30 +79,66 @@ int Power(const int x, int y)
 	return x * Power(x, y - 1);
 }
 
-int Fib1(int x)
-{
-	int a = 1;
-	int b = 1;
-	int c = 1;
-	
-	while (x>2)
-	{
-		c = a + b;
-		a = b;
-		b = c;
-		x--;
-	}
-	return c;
-
-}
+//int Fib3(int x)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	
+//	while (x>2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		x--;
+//	}
+//	return c;
+//
+//}
+//
+//#include<windows.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	double start = GetTickCount();
+//
+//	int ret = Fib3(n);
+//	double end = GetTickCount();
+//	printf("Fib3(%d) : %d\n", n, ret);
+//	
+//	printf("%lf s\n", (end - start) / 1000);
+//	return 0;
+//}
 
 //递归
-int Fib2(int x)
+
+#include<windows.h>
+int g_val = 0;
+int Fib(int x)
 {
+	if (x == 3)
+	{
+		g_val++;
+	}
 	if (x < 3)
 		return 1;
-	return Fib2(x - 1) + Fib2(x - 2);
+	return Fib(x - 1) + Fib(x - 2);
 }
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	double start = GetTickCount();
+//
+//	int ret = Fib(n);
+//	double end = GetTickCount();
+//	printf("Fib(%d) : %d\n",n ,ret);
+//	printf("重复的次数 :%d\n", g_val);
+//	printf("%lf s\n", (end - start)/1000);
+//	return 0;
+//}
 
 //int main()
 //{
@@ -155,15 +200,15 @@ void reverse_string(char* string)
 	string[right] = ret;
 }
 
-int main()
-{
-	char arr[] = "abcdef";
-
-	reverse_string(arr);
-
-	printf("%s\n", arr);
-	return 0;
-}
+//int main()
+//{
+//	char arr[] = "abcdef";
+//
+//	reverse_string(arr);
+//
+//	printf("%s\n", arr);
+//	return 0;
+//}
 
 //int main()
 //{
@@ -196,3 +241,100 @@ int main()
 //	//Print(n);
 //	return 0;
 //}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	printf("hehhehe\n");
+//	main();
+//	return 0;
+//}
+
+#include<windows.h>
+int Fib3(int n)
+{
+	int* p = (int*)malloc(sizeof(int) * (n + 1));
+	if (NULL == p)
+	{
+		return -1;
+	}
+	p[1] = 1;
+	p[2] = 1;
+	int i = 3;
+	while (i <= n)
+	{
+		p[i] = p[i - 1] + p[i - 2];
+		i++;
+	}
+	int result = p[n];
+	free(p);
+	p = NULL;
+	return result;
+}
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	double start = GetTickCount();
+//
+//	int ret = Fib3(n);
+//	double end = GetTickCount();
+//	printf("Fib4(%d) : %d\n",n ,ret);
+//	
+//	printf("%lf s\n", (end - start)/1000);
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("%d\n", Fib3(5));
+//	return 0;
+//}
+
+
+//
+//int main()
+//{
+//	int a = 10;
+//	printf("%d\n", a);
+//	return 0;
+//}
+
+char* longestCommonPrefix(char** strs, int strsSize) 
+{
+	int i = 0;
+
+	char* p = NULL;
+
+
+
+
+	/*printf("%s\n", *(strs + 0));
+	printf("%s\n", *(strs + 1));
+	printf("%s\n", *(strs + 2));*/
+
+	
+	//for (i = 0; i < strsSize; i++)
+	//{
+
+	//}
+}
+
+int main()
+{
+
+	char* arr[] = { "flower","flow","flight","flo"};
+
+	//int i = 0;
+	int ret = sizeof(arr) / sizeof(arr[0]);
+	longestCommonPrefix(arr, ret);
+	/*for (i = 0; i < ret; i++)
+	{
+
+	}*/
+	//指针数组是二级指针吗
+	printf("%d", ret);
+	return 0;
+}
