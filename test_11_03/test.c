@@ -322,19 +322,25 @@ char* longestCommonPrefix(char** strs, int strsSize)
 	//}
 }
 
+//int main()
+//{
+//
+//	char* arr[] = { "flower","flow","flight","flo"};
+//
+//	//int i = 0;
+//	int ret = sizeof(arr) / sizeof(arr[0]);
+//	longestCommonPrefix(arr, ret);
+//	/*for (i = 0; i < ret; i++)
+//	{
+//
+//	}*/
+//	//指针数组是二级指针吗
+//	printf("%d", ret);
+//	return 0;
+//}
+
 int main()
 {
 
-	char* arr[] = { "flower","flow","flight","flo"};
-
-	//int i = 0;
-	int ret = sizeof(arr) / sizeof(arr[0]);
-	longestCommonPrefix(arr, ret);
-	/*for (i = 0; i < ret; i++)
-	{
-
-	}*/
-	//指针数组是二级指针吗
-	printf("%d", ret);
 	return 0;
 }
