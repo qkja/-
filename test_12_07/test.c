@@ -2,6 +2,7 @@
 
 #include<stdio.h>
 //测试一下
+//
 int main()
 {
 	int arr[10] = { 0 };
