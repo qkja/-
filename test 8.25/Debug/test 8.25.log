@@ -1,4 +1,0 @@
-﻿  test .c
-E:\C程序\test 8.25\test .c(14,1): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-E:\C程序\test 8.25\test .c(15,1): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-  test 8.25.vcxproj -> E:\C程序\test 8.25\Debug\test 8.25.exe

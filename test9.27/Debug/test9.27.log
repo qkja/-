@@ -1,2 +1,0 @@
-﻿  test.c
-D:\githup\test9.27\test.c(37,1): warning C4305: “初始化”: 从“long double”到“float”截断

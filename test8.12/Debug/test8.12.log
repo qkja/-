@@ -1,3 +1,0 @@
-﻿  test.c
-E:\C程序\test8.12\test.c(148,12): warning C4047: “return”:“int”与“char *”的间接级别不同
-  test8.12.vcxproj -> E:\C程序\test8.12\Debug\test8.12.exe

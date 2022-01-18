@@ -1,3 +1,0 @@
-﻿  contact.c
-E:\C程序\Contact_Dynamic\contact.c(57,11): warning C4098: “InitContact”:“void”函数返回值
-E:\C程序\Contact_Dynamic\contact.c(191,42): warning C4028: 形参 1 与声明不同
