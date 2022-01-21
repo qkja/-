@@ -172,23 +172,23 @@ int* intersection(int* nums1, int nums1Size, int* nums2, int nums2Size, int* ret
 	return p;
 }
 
-int main()
-{
-	int arr1[] = { 4,9,5 };
-	int arr2[] = { 9,4,9,8,4 };
-	int sz1 = sizeof(arr1) / sizeof(arr1[0]);
-	int sz2 = sizeof(arr2) / sizeof(arr2[0]);
-	int ret = 0;
-
-	int* p1 = intersection(arr1, sz1, arr2, sz2, &ret);
-	for (int i = 0; i < ret; i++)
-	{
-		printf("%d ", p1[i]);
-	}
-	free(p1);
-	p1 = NULL;
-	return 0;
-}
+//int main()
+//{
+//	int arr1[] = { 4,9,5 };
+//	int arr2[] = { 9,4,9,8,4 };
+//	int sz1 = sizeof(arr1) / sizeof(arr1[0]);
+//	int sz2 = sizeof(arr2) / sizeof(arr2[0]);
+//	int ret = 0;
+//
+//	int* p1 = intersection(arr1, sz1, arr2, sz2, &ret);
+//	for (int i = 0; i < ret; i++)
+//	{
+//		printf("%d ", p1[i]);
+//	}
+//	free(p1);
+//	p1 = NULL;
+//	return 0;
+//}
 
 //int main()
 //{
@@ -197,3 +197,26 @@ int main()
 //	printf("%d", dominantIndex(arr, sz));
 //	return 0;
 //}
+
+//size_t strlen( const char *string );
+
+int My_strlen(const char* desc)
+{
+	assert(desc);
+	const char* p = desc;
+	int count = 0;
+	while (*p++ != '\0')
+	{
+		count++;
+		//p++;
+	}
+	return count;
+}
+
+int main()
+{
+	char arr[] = "aaa\0aaa";
+	int ret = My_strlen(arr);
+	printf("%d\n", ret);
+	return 0;
+}
