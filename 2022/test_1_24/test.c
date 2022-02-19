@@ -46,6 +46,7 @@ int main()
 			ShowContact(&con);
 			break;
 		case 0:
+			SaveContact(&con);
 			DestoryContact(&con);
 			printf("рямкЁЖ\n");
 			break;

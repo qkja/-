@@ -40,3 +40,4 @@ extern void SearchContact(Contact* pc);
 extern void ModifyContact(Contact* pc);
 extern void SortContact(Contact* pc);
 extern void DestoryContact(Contact* pc);
+extern void SaveContact(Contact* pc);

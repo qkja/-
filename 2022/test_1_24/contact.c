@@ -1,8 +1,69 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"contact.h"
-
+void ByADD(Contact* pc)
+{
+	assert(pc);
+	if (pc->sz == pc->capacity)
+	{
+		PeoInfo* temp = (PeoInfo*)realloc(pc->data, sizeof(PeoInfo) * (pc->capacity + 2));
+		if (temp != NULL)
+		{
+			pc->data = temp;
+			pc->capacity += 2;
+			printf("增容成功\n");
+		}
+		else
+		{
+			printf("check_capacity()::%s\n", strerror(errno));
+		}
+	}
+}
+void SaveContact(Contact* pc)
+{
+	FILE* pf = fopen("Contact.txt", "wb");
+	if (pf == NULL)
+	{
+		printf("SaveContact::%s", strerror(errno));
+		return;
+	}
+	//写文件
+	for (int i = 0; i < pc->sz; i++)
+	{
+		fwrite(pc->data + i, sizeof(PeoInfo), 1, pf);
+		/*fprintf(pf,"%s %d %s %s %s",
+			pc->data[i].addr, 
+			pc->data[i].age,
+			pc->data[i].name,
+			pc->data[i].sex,
+			pc->data[i].tele);*/
+	}
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
+void LoadContact(Contact* pc)
+{
+	PeoInfo buf = { 0 };
+	//记载数据
+	FILE* pf = fopen("Contact.txt", "rb");
+	if (pf == NULL)
+	{
+		printf("OpenContact::%s", strerror(errno));
+		return;
+	}
+	//关闭文件
+	while (fread(&buf, sizeof(PeoInfo), 1, pf))
+	{
+		ByADD(pc);//判断是否增容
+		pc->data[pc->sz] = buf;
+		pc->sz++;
+	}
+	fclose(pf);
+	pf = NULL;
+}
 void InitContact(Contact* pc)
 {
+
 	assert(pc);
 	PeoInfo* temp = (PeoInfo*)malloc(CAP * sizeof(PeoInfo));
 	if (temp != NULL)
@@ -17,6 +78,7 @@ void InitContact(Contact* pc)
 
 	pc->sz = 0;
 	pc->capacity = CAP;
+	LoadContact(pc);
 }
 int ComByName(const void* e1, const void* e2)
 {
@@ -89,27 +151,9 @@ void DestoryContact(Contact* pc)
 	pc->data = NULL;
 	pc->capacity = 0;
 	pc->sz = 0;
-
 }
 
-void ByADD(Contact* pc)
-{
-	assert(pc);
-	if (pc->sz == pc->capacity)
-	{
-		PeoInfo* temp = (PeoInfo*)realloc(pc->data, sizeof(PeoInfo)*(pc->capacity + 2));
-		if (temp != NULL)
-		{
-			pc->data = temp;
-			pc->capacity += 2;
-			printf("增容成功\n");
-		}
-		else
-		{
-			printf("check_capacity()::%s\n", strerror(errno));
-		}
-	}
-}
+
 
 void AddContact(Contact* pc)
 {
