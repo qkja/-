@@ -17,6 +17,9 @@ int minNumberInRotateArray(int* rotateArray, int rotateArrayLen)
 		else
 		{
 			left++;
+			
+			
+			
 		}
 	}
 	return *left;
