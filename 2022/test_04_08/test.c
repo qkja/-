@@ -19,7 +19,7 @@ void test1()
 }
 void test2()
 {
-	SlStack slStack;s
+	SlStack slStack;
 	InitSlStack(&slStack);
 	slPush(&slStack, 1);
 	slPush(&slStack, 2);
