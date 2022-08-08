@@ -6,6 +6,14 @@
 *.user
 *.sln.docstates
 
+# 这是我自己不让提交的文件
+
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+
+
 # Build results
 
 [Dd]ebug/

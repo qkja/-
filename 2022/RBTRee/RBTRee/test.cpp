@@ -1,50 +1,26 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <iostream>
-#include <queue>
-#include <time.h>
-#include <vector>
-
-#include "RBTRee.h"
+#include "map.h"
+#include "set.h"
 
 using namespace std;
 
-void test_rbtree1()
+void test_map()
 {
-	//int a[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
-	int a[] = { 30, 29, 28, 27, 26, 25, 24, 11, 8, 7, 6, 5, 4, 3, 2, 1 };
-	//int a[] = { 30, 29,28,27,26};
-	RBTree<int, int> t;
-	for (auto e : a)
-	{
-		t.Insert(make_pair(e, e));
-	}
-	t.levelOrder();
-	t.Inorder();
+	bit::map<int, int> m;
+	m.insert(make_pair(1, 1));
+	m.insert(make_pair(2, 2));
+	m.insert(make_pair(3, 3));
+	m.insert(make_pair(4, 4));
 }
-void test_rbtree2()
+
+void test_set()
 {
-	const size_t N = 100;
-	vector<int> v;
-	v.reserve(N);
-	srand(time(0));
-	for (size_t i = 0; i < N; ++i)
-	{
-		v.push_back(rand()%100);
-	}
-
-	RBTree<int, int> t;
-	for (auto e : v)
-	{
-		t.Insert(make_pair(e, e));
-	}
-
-	t.levelOrder();
-	t.Inorder();
 
 }
 int main()
 {
-	//test_rbtree1();
-	test_rbtree2();
+	test_map();
+	//test_set();
 	return 0;
 }
