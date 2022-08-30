@@ -45,8 +45,91 @@ struct __RBTreeIterator
 		:_node(node)
 	{}
 
-	//Self 
+	Ref operator*()
+	{
+		return _node->_t;
+	}
 
+	Ptr operator->()
+	{
+		return &(_node->_t);
+	}
+
+	// 前置 ++
+	Self& operator++()
+	{
+		// 这里 就不判断  _node 为nullptr的情况了
+		if (_node->_right == nullptr)
+		{
+			Node* cur = _node;
+			Node* parent = cur->_parent;
+			while (parent && parent->_left != cur)
+			{
+				cur = parent;
+				parent = parent->_parent;
+			}
+
+			_node = parent;
+
+		}
+		else
+		{
+			Node* subLeft = _node->_right;
+			while (subLeft->_left)
+			{
+				subLeft = subLeft->_left;
+			}
+			_node = subLeft;
+		}
+		return *this;
+	}
+	Self operator++(int)
+	{
+		Self ret(this->_node);
+		++(this);
+		return ret;
+	}
+	// 前置
+	Self& operator--()
+	{
+		if (_node->_left == nullptr)
+		{
+			Node* cur = _node;
+			Node* parent = cur->_parent;
+			while (parent && parent->_left == cur)
+			{
+				cur = parent;
+				parent = parent->_parent;
+			}
+			_node = parent;
+		}
+		else
+		{ 
+			Node* subLR = _node->_left;
+			while (subLR->_right)
+			{
+				subLR->_right;
+			}
+			_node = subLR;
+		}
+		return *this;
+	}
+	Self operator--(int)
+	{
+		Self ret(this->_node);
+		++(this);
+		return ret;
+	}
+	bool operator!=(const Self& s) const
+	{
+		//这里比较 的 是 地址
+		return _node != s._node;
+	}
+
+	bool operator==(const Self& s) const
+	{
+		return _node == s->_node;
+	}
 };
 
 template<class K, class T, class KeyOfT>
@@ -56,10 +139,50 @@ class RBTree
 public:
 	typedef __RBTreeIterator<T, T&, T*> iterator;
 	typedef __RBTreeIterator<T, const T&, const T*> const_iterator;
+	iterator begin()
+	{
+		if (_root == nullptr)
+		{
+			return iterator(_root);
+		}
+		//最  左侧的
+		Node* cur = _root;
+		while (cur->_left)
+		{
+			cur = cur->_left;
+		}
+		return iterator(cur);
+	}
+	iterator end()
+	{
+		return iterator(nullptr);
+	}
+
+	const_iterator begin() const
+	{
+		if (_root == nullptr)
+		{
+			return const_iterator(_root);
+		}
+		//最  左侧的
+		Node* cur = _root;
+		while (cur->_left)
+		{
+			cur = cur->_left;
+		}
+		return const_iterator(cur);
+	}
+
+	const_iterator end() const
+	{
+		return const_iterator(nullptr);
+	}
+
 public:
 	RBTree()
 		: _root(nullptr)
 	{}
+	
 
 	// 在AVL树中插入值为t的节点
 	bool Insert(const T& t)
